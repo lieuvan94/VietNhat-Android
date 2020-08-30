@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="vn.hexagon.vietnhat.ui.post.ads.AdsPostViewModel" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_gray_f4f5f7">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/adsPostParent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/adsTitle"
+                style="@style/LabelDialogStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_24"
+                android:text="@string/post_title_lbl"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/adsPostEdTitle"
+                style="@style/EditTextDialogStyle"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/adsTitle"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:hint="@string/post_title_lbl"
+                android:text="@={viewmodel.title}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/adsTitle" />
+
+            <TextView
+                android:id="@+id/adsAddress"
+                style="@style/LabelDialogStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_24"
+                android:text="@string/address_label"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/adsPostEdTitle" />
+
+            <EditText
+                android:id="@+id/adsPostEdAddress"
+                style="@style/EditTextDialogStyle"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/adsAddress"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:focusable="false"
+                android:hint="@string/address_label"
+                android:singleLine="true"
+                android:text="@={viewmodel.address}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/adsAddress" />
+
+            <TextView
+                android:id="@+id/subjectLbl"
+                style="@style/LabelDialogStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_16"
+                android:text="@string/login_phone_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/adsPostEdAddress" />
+
+            <com.hbb20.CountryCodePicker
+                android:id="@+id/adsCountryCodePicker"
+                android:layout_width="@dimen/dp_88"
+                android:layout_height="@dimen/dp_40"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_8"
+                android:background="@drawable/country_code_bg"
+                android:gravity="center"
+                app:ccp_contentColor="@color/color_grey_9b9b9b"
+                app:ccp_defaultNameCode="VN"
+                app:ccp_rememberLastSelection="true"
+                app:ccp_showArrow="false"
+                app:ccp_showNameCode="false"
+                app:ccp_textSize="@dimen/sp_14"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/subjectLbl" />
+
+            <EditText
+                android:id="@+id/adsPostEdPhone"
+                style="@style/EditTextDialogStyle"
+                android:layout_width="@dimen/dp_0"
+                android:layout_marginStart="@dimen/dp_12"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:layout_toEndOf="@+id/adsCountryCodePicker"
+                android:hint="@string/login_phone_title"
+                android:inputType="number"
+                android:text="@={viewmodel.phone}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/adsCountryCodePicker"
+                app:layout_constraintTop_toBottomOf="@+id/subjectLbl"
+                tools:ignore="TextFields" />
+
+            <TextView
+                android:id="@+id/adsPriceLbl"
+                style="@style/LabelDialogStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_16"
+                android:text="@string/price_lbl"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/adsPostEdPhone" />
+
+            <TextView
+                android:id="@+id/adsPriceUnitLbl"
+                style="@style/LabelDialogStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/dp_16"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:text="@string/money_unit"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/adsPostEdPhone" />
+
+            <EditText
+                android:id="@+id/adsPostEdPrice"
+                style="@style/EditTextDialogStyle"
+                android:layout_width="match_parent"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:hint="@string/price_lbl"
+                android:inputType="number"
+                android:text="@={viewmodel.price}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/adsPriceLbl" />
+
+            <TextView
+                android:id="@+id/imageLbl"
+                style="@style/LabelDialogStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_28"
+                android:text="@string/image_lbl"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/adsPostEdPrice" />
+
+            <Button
+                android:id="@+id/adsPostSelectBtn"
+                style="@style/WhiteButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/adsPostEdPrice"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/dp_16"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:text="@string/select_image_lbl"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/adsPostEdPrice" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/adsPostRecyclerImg"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_16"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:layout_marginBottom="@dimen/dp_4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/adsPostSelectBtn"
+                tools:itemCount="4"
+                tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/layout_images_horizontal"
+                tools:orientation="horizontal" />
+
+            <TextView
+                android:id="@+id/contentLbl"
+                style="@style/LabelDialogStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:text="@string/content_lbl"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/adsPostRecyclerImg" />
+
+            <EditText
+                android:id="@+id/adsPostEdContent"
+                style="@style/EditTextMultilineStyle"
+                android:layout_width="match_parent"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:hint="@string/content_lbl"
+                android:text="@={viewmodel.content}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/contentLbl" />
+
+            <TextView
+                android:id="@+id/messengerLbl"
+                style="@style/LabelDialogStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/adsPostEdContent"
+                android:layout_marginStart="@dimen/dp_16"
+                android:text="@string/note_lbl"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/adsPostEdContent" />
+
+            <EditText
+                android:id="@+id/adsPostEdMessenger"
+                style="@style/EditTextDialogStyle"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/messengerLbl"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:hint="@string/note_lbl"
+                android:text="@={viewmodel.note}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/messengerLbl" />
+
+            <CheckBox
+                android:id="@+id/adsPostPinCheck"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/adsPostEdMessenger"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_16"
+                android:text="@string/up_top_lbl"
+                android:textColor="@color/color_indigo_26415d"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/adsPostEdMessenger" />
+
+            <Button
+                android:id="@+id/adsPostCommitBtn"
+                style="@style/PinkButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/adsPostPinCheck"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_30"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:layout_marginBottom="@dimen/dp_16"
+                android:text="@string/commit_lbl"
+                android:textColor="@color/colorWhite"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/adsPostPinCheck" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/adsPostBarrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="top"
+                app:constraint_referenced_ids="adsPostRecyclerImg,adsPostSelectBtn"
+                tools:layout_editor_absoluteY="929dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

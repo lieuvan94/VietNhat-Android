@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_bg_dialog_outside"
+        android:paddingLeft="@dimen/dp_16"
+        android:paddingRight="@dimen/dp_16">
+
+    <RelativeLayout
+            style="@style/DialogStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+
+        <TextView
+                android:id="@+id/dialogTitle"
+                style="@style/TitleDialogStyle"
+                android:text="@string/dialog_title_confirm_top" />
+
+        <TextView
+                style="@style/LabelDialogStyle"
+                android:id="@+id/dialogContent"
+                android:layout_below="@+id/dialogTitle"
+                android:text="@string/dialog_confirm_top_content"
+                android:gravity="center_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        <Button
+                android:id="@+id/confirmPurchaseBtn"
+                style="@style/PinkButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/dialogContent"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/dp_30"
+                android:layout_marginBottom="@dimen/dp_40"
+                android:text="@string/dialog_confirm_top_btn" />
+
+        <ImageView
+                android:id="@+id/closeBtn"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/dp_20"
+                android:background="?attr/selectableItemBackground"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_close" />
+    </RelativeLayout>
+</RelativeLayout>

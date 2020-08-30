@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="vn.hexagon.vietnhat.ui.post.job.JobPostViewModel" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/jobPostParent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_gray_f4f5f7"
+            app:layout_constraintBottom_toTopOf="@+id/textView6"
+            app:layout_constraintTop_toTopOf="@+id/textView6">
+
+            <TextView
+                android:id="@+id/textView2"
+                style="@style/LabelDialogStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/post_job_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/postJobTitle"
+                style="@style/EditTextDialogStyle"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_40"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:ems="10"
+                android:hint="@string/post_title_lbl"
+                android:inputType="textPersonName"
+                android:text="@={viewmodel.title}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+            <TextView
+                android:id="@+id/textView6"
+                style="@style/LabelDialogStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/job_company_addr_lbl"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/postJobEdCategory" />
+
+            <TextView
+                android:id="@+id/textView7"
+                style="@style/LabelDialogStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/login_phone_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/postJobEdAddress" />
+
+            <EditText
+                android:id="@+id/postJobEdAddress"
+                style="@style/EditTextDialogStyle"
+                android:layout_width="0dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:ems="10"
+                android:focusable="false"
+                android:hint="@string/job_company_addr_lbl"
+                android:inputType="textPersonName"
+                android:singleLine="true"
+                android:text="@={viewmodel.address}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+            <com.hbb20.CountryCodePicker
+                android:id="@+id/jobCountryCodePicker"
+                android:layout_width="@dimen/dp_88"
+                android:layout_height="@dimen/dp_40"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_8"
+                android:background="@drawable/country_code_bg"
+                android:gravity="center"
+                app:ccp_contentColor="@color/color_grey_9b9b9b"
+                app:ccp_defaultNameCode="VN"
+                app:ccp_rememberLastSelection="true"
+                app:ccp_showArrow="false"
+                app:ccp_showNameCode="false"
+                app:ccp_textSize="@dimen/sp_14"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+            <EditText
+                android:id="@+id/postJobEdPhone"
+                style="@style/EditTextDialogStyle"
+                android:layout_width="0dp"
+                android:layout_marginStart="@dimen/dp_12"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:ems="10"
+                android:hint="@string/login_phone_title"
+                android:inputType="phone"
+                android:text="@={viewmodel.phone}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/jobCountryCodePicker"
+                app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+            <Spinner
+                android:id="@+id/jobPostType"
+                style="@style/SpinnerDialogStyle"
+                android:layout_width="0dp"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_16"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+            <TextView
+                android:id="@+id/textView8"
+                style="@style/LabelDialogStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:text="@string/job_kind_lbl"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/postJobTitle" />
+
+            <TextView
+                android:id="@+id/textView9"
+                style="@style/LabelDialogStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:text="@string/job_company_type_lbl"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/jobPostType" />
+
+            <EditText
+                android:id="@+id/postJobEdCategory"
+                style="@style/EditTextDialogStyle"
+                android:layout_width="0dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:ems="10"
+                android:hint="@string/job_company_type_lbl"
+                android:inputType="text"
+                android:singleLine="true"
+                android:text="@={viewmodel.category}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+            <TextView
+                android:id="@+id/textView10"
+                style="@style/LabelDialogStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/job_salary_lbl"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/postJobEdPhone" />
+
+            <EditText
+                android:id="@+id/postJobEdSalary"
+                style="@style/EditTextDialogStyle"
+                android:layout_width="0dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="@dimen/dp_8"
+                android:hint="@string/job_salary_lbl"
+                android:inputType="number"
+                android:text="@={viewmodel.salary}"
+                app:layout_constraintEnd_toStartOf="@+id/jobPostSalaryPriceUnit"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+            <Spinner
+                android:id="@+id/jobPostSalaryPriceUnit"
+                style="@style/SpinnerDialogStyle"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_40"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:entries="@array/salaryType"
+                tools:listitem="@layout/layout_common_spinner"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/postJobEdSalary"
+                app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+            <TextView
+                android:id="@+id/textView11"
+                style="@style/LabelDialogStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="28dp"
+                android:text="@string/image_lbl"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/postJobEdSalary" />
+
+            <Button
+                android:id="@+id/jobPostSelectImg"
+                style="@style/WhiteButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_16"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:text="@string/select_image_lbl"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/postJobEdSalary" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/jobPostRecyclerImg"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_16"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:layout_marginBottom="@dimen/dp_4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/jobPostSelectImg"
+                tools:itemCount="4"
+                tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/layout_images_horizontal"
+                tools:orientation="horizontal" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/jobPostBarrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="jobPostRecyclerImg,jobPostSelectImg"
+                tools:layout_editor_absoluteY="702dp" />
+
+            <TextView
+                android:id="@+id/textView12"
+                style="@style/LabelDialogStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/job_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/jobPostBarrier" />
+
+            <EditText
+                android:id="@+id/postJobEdContent"
+                style="@style/EditTextMultilineStyle"
+                android:layout_width="0dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:ems="10"
+                android:hint="@string/job_content"
+                android:text="@={viewmodel.content}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+            <TextView
+                android:id="@+id/textView13"
+                style="@style/LabelDialogStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/note_lbl"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/postJobEdContent" />
+
+            <EditText
+                android:id="@+id/postJobEdNote"
+                style="@style/EditTextDialogStyle"
+                android:layout_width="0dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginEnd="16dp"
+                android:ems="10"
+                android:hint="@string/note_lbl"
+                android:inputType="text"
+                android:text="@={viewmodel.note}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+            <CheckBox
+                android:id="@+id/postJobIsTop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/up_top_lbl"
+                android:textColor="@color/color_indigo_26415d"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/postJobEdNote" />
+
+            <Button
+                android:id="@+id/postJobCommitBtn"
+                style="@style/PinkButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_30"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:layout_marginBottom="@dimen/dp_30"
+                android:text="@string/commit_lbl"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/postJobIsTop" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

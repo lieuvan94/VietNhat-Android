@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="android.widget.ImageButton" />
+
+        <variable
+                name="viewmodel"
+                type="vn.hexagon.vietnhat.ui.list.PostListViewModel" />
+
+        <variable
+                name="position"
+                type="Integer" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/phoneListItemArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite"
+            android:foreground="?attr/selectableItemBackground">
+
+        <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="88dp"
+                android:layout_height="88dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:adjustViewBounds="true"
+                android:background="@drawable/round_corner_img_bg"
+                android:contentDescription="@null"
+                android:scaleType="fitXY"
+                app:imageUrl="@{viewmodel.postListResponse.data[position].img}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@tools:sample/backgrounds/scenic[19]" />
+
+        <RelativeLayout
+                android:id="@+id/relativeLayout2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:gravity="center_vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/imageView"
+                app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                    android:id="@+id/iconTop"
+                    android:layout_width="@dimen/dp_10"
+                    android:layout_height="@dimen/dp_10"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="4dp"
+                    android:background="@drawable/ic_top"
+                    android:visibility="@{viewmodel.displayTopIcon(viewmodel.postListResponse.data[position].isTop) ? View.VISIBLE : View.GONE}" />
+
+            <TextView
+                    android:id="@+id/itemTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_toStartOf="@id/iconFavourite"
+                    android:layout_toEndOf="@id/iconTop"
+                    android:text="@{viewmodel.postListResponse.data[position].title}"
+                    android:textColor="@color/color_indigo_26415d"
+                    android:textStyle="bold"
+                    tools:text="[FTI] Business Analyst " />
+
+            <ImageButton
+                    android:id="@+id/iconFavourite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@null"
+                    android:padding="3dp"
+                    android:src="@{viewmodel.postListResponse.data[position].isFavourite == 0 ? @drawable/ic_save : @drawable/ic_save_active}"
+                    android:visibility="gone"
+                    tools:src="@drawable/ic_save" />
+
+        </RelativeLayout>
+
+        <TextView
+                android:id="@+id/itemSubContent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:text="@{viewmodel.postListResponse.data[position].address}"
+                android:textColor="@color/color_grey_9b9b9b"
+                android:textSize="@dimen/sp_12"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageView"
+                app:layout_constraintTop_toBottomOf="@+id/relativeLayout2"
+                tools:text="100 Nguyễn Văn Cừ, Long Biên, Hà Nội" />
+
+        <TextView
+                android:id="@+id/itemLastText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="@{viewmodel.postListResponse.data[position].content}"
+                android:textColor="@color/color_indigo_26415d"
+                android:textSize="@dimen/sp_12"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageView"
+                app:layout_constraintTop_toBottomOf="@+id/itemSubContent"
+                tools:text="9.990.000₫" />
+
+        <View
+                android:id="@+id/itemDivider"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/color_divider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/phoneItemBarrier" />
+
+        <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/phoneItemBarrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="imageView,itemLastText"
+                tools:layout_editor_absoluteY="121dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

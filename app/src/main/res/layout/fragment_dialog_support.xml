@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_bg_dialog_outside"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/dp_16"
+        android:paddingRight="@dimen/dp_16">
+
+        <RelativeLayout
+            style="@style/DialogStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/phoneLbl"
+                style="@style/TitleDialogStyle"
+                android:text="@string/dialog_title_support" />
+
+            <EditText
+                android:id="@+id/inputSupport"
+                style="@style/EditTextDialogStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/phoneLbl"
+                android:layout_marginTop="@dimen/dp_30"
+                android:hint="@string/hint_input_require" />
+
+            <TextView
+                android:id="@+id/addressLbl"
+                style="@style/LabelDialogStyle"
+                android:layout_below="@+id/inputSupport"
+                android:text="@string/address_label" />
+
+            <LinearLayout
+                android:id="@+id/addressArea"
+                style="@style/AddressDialogStyle"
+                android:layout_below="@+id/addressLbl"
+                android:layout_marginTop="@dimen/dp_8"
+                android:gravity="center_vertical">
+
+                <TextView
+                    style="@style/LabelAddrDialogStyle"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:layout_marginEnd="@dimen/dp_16"
+                    android:drawableStart="@drawable/ic_pinmap"
+                    android:drawablePadding="@dimen/dp_4"
+                    android:text="@string/address_lbl"
+                    android:textSize="@dimen/sp_12" />
+
+                <View
+                    android:id="@+id/divider2"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/color_dfe1ea" />
+
+                <EditText
+                    android:id="@+id/inputAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:hint="@string/input_address_hint"
+                    android:includeFontPadding="false"
+                    android:textColorHint="@color/color_grey_9b9b9b"
+                    android:textSize="@dimen/sp_14" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/supportSeekBtn"
+                style="@style/PinkButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/addressArea"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/dp_30"
+                android:text="@string/search_button_lbl" />
+
+            <ImageView
+                android:id="@+id/supportCloseBtn"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/dp_20"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_close" />
+        </RelativeLayout>
+    </RelativeLayout>
+</layout>

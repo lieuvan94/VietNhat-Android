@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="vn.hexagon.vietnhat.data.model.translator.Translator"/>
+        <import type="androidx.paging.PagedList"/>
+        <import type="androidx.lifecycle.LiveData"/>
+        <variable
+                name="userId"
+                type="String" />
+        <variable
+                name="serviceId"
+                type="String" />
+        <variable
+                name="postModel"
+                type="vn.hexagon.vietnhat.ui.post.PostViewModel" />
+        <variable
+                name="postData"
+                type="LiveData&lt;PagedList&lt;Translator>>" />
+    </data>
+    <LinearLayout
+        android:id="@+id/managePostFragmentParent"
+        android:orientation="vertical"
+        android:animateLayoutChanges="true"
+            android:background="@color/color_divider"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        
+        <include
+            android:id="@+id/unLoginArea"
+            android:visibility="gone"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            layout="@layout/fragment_unlogin_common"/>
+
+        <Spinner
+                android:id="@+id/postSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_40"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/drop_down_list_bg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/managePostRefreshList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dp_16"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/postSpinner">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/postRecycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorWhite"
+                    tools:listitem="@layout/layout_item_list_service_translator" />
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+        <RelativeLayout
+            android:id="@+id/postListProgress"
+            android:layout_marginTop="@dimen/dp_16"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/postSpinner"
+            android:visibility="gone"
+            android:background="@color/colorWhite">
+
+            <ProgressBar
+                android:id="@+id/progressBarOnList"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/errMsgOnList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textColor="@color/color_grey_9b9b9b"
+                android:textSize="@dimen/sp_14"
+                android:text="@string/list_screen_error_msg"
+                android:gravity="center_horizontal"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+</layout>

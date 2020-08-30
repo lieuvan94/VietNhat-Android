@@ -1,0 +1,120 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'androidx.navigation.safeargs'
+
+apply plugin: 'kotlin-kapt'
+
+android {
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+  }
+
+  compileSdkVersion androidCompileSdkVersion
+  defaultConfig {
+    applicationId "vn.hexagon.vietnhat"
+    minSdkVersion androidMinSdkVersion
+    targetSdkVersion androidTargetSdkVersion
+    versionCode 8
+    versionName "1.0.5"
+    testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    resConfigs "en", "vi", "ja"
+  }
+  buildTypes {
+    release {
+      minifyEnabled true
+      shrinkResources true
+      proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+    }
+  }
+  dataBinding {
+    enabled = true
+  }
+}
+
+dependencies {
+  // Default
+  implementation fileTree(dir: 'libs', include: ['*.jar'])
+  implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+  implementation "androidx.appcompat:appcompat:$androidXAppCompatVersion"
+  implementation "androidx.core:core-ktx:$androidXCoreKTXVersion"
+  implementation constraintLayoutDependency
+
+  // JetPack dependencies
+  implementation androidXDependencies.lifeCycleRuntime
+  implementation androidXDependencies.lifeCycleExtension
+  implementation androidXDependencies.room
+  implementation androidXDependencies.roomRxJava
+  kapt androidXDependencies.roomCompiler
+
+  implementation androidXDependencies.navigationFragment
+  implementation androidXDependencies.navigationUI
+
+  implementation androidXDependencies.pager
+
+  implementation androidXDependencies.paging
+  implementation androidXDependencies.pagingRxJava
+  // JetPack dependencies
+
+  // Dependencies Injection
+  implementation daggerDependencies.dagger
+  implementation daggerDependencies.daggerAndroid
+  implementation daggerDependencies.daggerSupportAndroid
+  kapt daggerDependencies.daggerAnnotation
+  kapt daggerDependencies.daggerAndroidProcessor
+  // Dependencies Injection
+
+  // Network dependencies
+  implementation networkDependencies.retrofit
+  implementation networkDependencies.retrofitGsonConverter
+  implementation networkDependencies.retrofitRxJava
+  implementation networkDependencies.logging
+  // Network dependencies
+
+  // Rx
+  implementation rxDependencies.rxJava
+  implementation rxDependencies.rxAndroid
+  // Rx
+
+  //Glide
+  implementation glideDependency.runtime
+  kapt glideDependency.compiler
+
+  // Country Code Picker
+  implementation countryCdPicker
+  // Gmc
+  implementation googlePlayService
+  // Facebook SDK
+  implementation facebookSdk
+  // Easy Permission
+  implementation easyPermission
+  // Place
+  implementation googlePlace
+  // Swipe layout
+  implementation swipeLayout
+  // Fire base
+  implementation firebaseMsg
+  implementation firebaseAnalyze
+  // Play core
+  implementation playCore
+  // Zoom in Zoom out
+  implementation zoomage
+  // Stripe
+  implementation stripe
+
+  //SocketIO
+  implementation(socketIODependency) {
+    exclude group: 'org.json', module: 'json'
+  }
+
+  // Test dependencies
+  testImplementation 'junit:junit:4.12'
+  androidTestImplementation 'androidx.test:runner:1.2.0'
+  androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+  implementation 'androidx.work:work-runtime:2.2.0'
+}
+apply plugin: 'com.google.gms.google-services'

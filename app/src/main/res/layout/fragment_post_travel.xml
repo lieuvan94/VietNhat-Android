@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="vn.hexagon.vietnhat.ui.post.travel.TravelPostViewModel" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_gray_f4f5f7">
+
+        <RelativeLayout
+            android:id="@+id/travelPostParent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/newTitle"
+                style="@style/LabelDialogStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_24"
+                android:text="@string/post_title_lbl" />
+
+            <EditText
+                android:id="@+id/travelPostEdTitle"
+                style="@style/EditTextDialogStyle"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/newTitle"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:hint="@string/post_title_lbl"
+                android:text="@={viewmodel.title}" />
+
+            <TextView
+                android:id="@+id/servicePrice"
+                style="@style/LabelDialogStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/travelPostEdTitle"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_16"
+                android:text="@string/travel_price_lbl" />
+
+            <EditText
+                android:id="@+id/travelPostEdPrice"
+                style="@style/EditTextDialogStyle"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/servicePrice"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:hint="@string/travel_price_lbl"
+                android:inputType="number"
+                android:text="@={viewmodel.price}" />
+
+            <TextView
+                style="@style/LabelDialogStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/travelPostEdPrice"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/dp_28"
+                android:text="@string/price_per_people" />
+
+            <TextView
+                android:id="@+id/travelPhoneLbl"
+                style="@style/LabelDialogStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/travelPostEdPrice"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_16"
+                android:text="@string/login_phone_title" />
+
+            <com.hbb20.CountryCodePicker
+                android:id="@+id/travelCountryCodePicker"
+                android:layout_width="@dimen/dp_88"
+                android:layout_height="@dimen/dp_40"
+                android:layout_below="@+id/travelPhoneLbl"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_8"
+                android:background="@drawable/country_code_bg"
+                android:gravity="center"
+                app:ccp_contentColor="@color/color_grey_9b9b9b"
+                app:ccp_defaultNameCode="VN"
+                app:ccp_rememberLastSelection="true"
+                app:ccp_showArrow="false"
+                app:ccp_showNameCode="false"
+                app:ccp_textSize="@dimen/sp_14" />
+
+            <EditText
+                android:id="@+id/travelPostEdPhone"
+                style="@style/EditTextDialogStyle"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/travelPhoneLbl"
+                android:layout_marginStart="@dimen/dp_12"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:layout_toEndOf="@+id/travelCountryCodePicker"
+                android:hint="@string/login_phone_title"
+                android:inputType="number"
+                android:text="@={viewmodel.phone}"
+                tools:ignore="TextFields" />
+
+            <TextView
+                android:id="@+id/imageLbl"
+                style="@style/LabelDialogStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/travelPostEdPhone"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_28"
+                android:text="@string/image_lbl" />
+
+            <Button
+                android:id="@+id/travelPostSelectBtn"
+                style="@style/WhiteButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/travelPostEdPhone"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/dp_16"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:singleLine="true"
+                android:text="@string/select_image_lbl" />
+
+            <LinearLayout
+                android:id="@+id/travelPostBarrier"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/travelPostSelectBtn"
+                android:orientation="vertical">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/travelPostRecyclerImg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:layout_marginTop="@dimen/dp_16"
+                    android:layout_marginEnd="@dimen/dp_16"
+                    android:layout_marginBottom="@dimen/dp_4"
+                    tools:itemCount="4"
+                    tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/layout_images_horizontal"
+                    tools:orientation="horizontal" />
+
+                <TextView
+                    style="@style/LabelDialogStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:text="@string/content_lbl" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/travelPostEdContent"
+                style="@style/EditTextMultilineStyle"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/travelPostBarrier"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:hint="@string/content_lbl"
+                android:text="@={viewmodel.content}" />
+
+            <TextView
+                android:id="@+id/messengerLbl"
+                style="@style/LabelDialogStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/travelPostEdContent"
+                android:layout_marginStart="@dimen/dp_16"
+                android:text="@string/note_lbl" />
+
+            <EditText
+                android:id="@+id/travelPostEdMessenger"
+                style="@style/EditTextDialogStyle"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/messengerLbl"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:hint="@string/note_lbl"
+                android:text="@={viewmodel.note}" />
+
+            <CheckBox
+                android:id="@+id/travelPostPinCheck"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/travelPostEdMessenger"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_16"
+                android:text="@string/up_top_lbl"
+                android:textColor="@color/color_indigo_26415d" />
+
+            <Button
+                android:id="@+id/travelPostCommitBtn"
+                style="@style/PinkButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/travelPostPinCheck"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_30"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:layout_marginBottom="@dimen/dp_16"
+                android:text="@string/commit_lbl"
+                android:textColor="@color/colorWhite" />
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

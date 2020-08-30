@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_grey_F4F5F7">
+
+    <View
+      android:id="@+id/inputMessageChatDetailDivider"
+      android:layout_width="match_parent"
+      android:layout_height="@dimen/dp_2"
+      android:layout_above="@id/inputMessageChatDetailLayout"
+      android:background="@drawable/shadow_line_bottom_bar" />
+
+    <FrameLayout
+      android:id="@+id/inputMessageChatDetailLayout"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_alignParentBottom="true"
+      android:padding="@dimen/margin_normal">
+
+      <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:layout_marginTop="@dimen/margin_normal"
+        android:layout_marginBottom="@dimen/margin_normal"
+        android:background="@drawable/input_message_background">
+
+        <EditText
+          android:id="@+id/inputMessageChatDetailEdit"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:layout_marginStart="@dimen/margin_big"
+          android:layout_marginTop="@dimen/margin_small"
+          android:layout_marginEnd="@dimen/margin_big"
+          android:layout_marginBottom="@dimen/margin_small"
+          android:background="@null"
+          android:gravity="center_vertical"
+          android:hint="@string/hint_input_message"
+          android:imeOptions="actionSend"
+          android:singleLine="true"
+          android:textSize="@dimen/sp_14" />
+
+        <ImageView
+          android:id="@+id/sendMessageChatDetailButton"
+          android:layout_width="@dimen/dp_30"
+          android:layout_height="@dimen/dp_30"
+          android:layout_gravity="center_vertical|right"
+          android:layout_marginEnd="@dimen/margin_default"
+          android:background="@drawable/ic_send" />
+      </FrameLayout>
+    </FrameLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+      android:id="@+id/chatDetailRecycler"
+      style="@style/scrollbar_style"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_above="@id/inputMessageChatDetailDivider"
+      android:layout_alignParentTop="true"
+      android:clipToPadding="false"
+      android:paddingTop="@dimen/margin_minimum"
+      android:paddingEnd="@dimen/margin_minimum"
+      android:paddingBottom="@dimen/margin_minimum" />
+  </RelativeLayout>
+
+  <data>
+
+    <import type="vn.hexagon.vietnhat.ui.chat.ChatDetailViewModel" />
+
+    <variable
+      name="viewModel"
+      type="ChatDetailViewModel" />
+  </data>
+</layout>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.view.View"/>
+        <import type="android.graphics.drawable.Drawable"/>
+        <import type="androidx.lifecycle.LiveData"/>
+        <import type="vn.hexagon.vietnhat.data.model.ExampleUser"/>
+
+        <variable name="userid"
+                  type="String"/>
+        <variable
+                name="viewmodel"
+                type="vn.hexagon.vietnhat.ui.example.ExampleFragmentViewModel"/>
+
+        <variable
+                name="userdata"
+                type="LiveData&lt;ExampleUser>"/>
+
+        <variable
+                name="imageRequestListener"
+                type="com.bumptech.glide.request.RequestListener&lt;Drawable>" />
+    </data>
+
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#74b9ff"
+            android:gravity="center"
+            android:orientation="vertical">
+
+        <Button
+                android:id="@+id/getUserButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GET USER"
+                android:onClick="@{() -> viewmodel.getUserFromRemote(userid)}"
+        />
+
+        <LinearLayout
+                android:id="@+id/infoUserLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+            <ImageView
+                    android:id="@+id/avatarUserImage"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    app:imageUrl="@{userdata.avatarUrl}"
+                    app:imageRequestListener="@{imageRequestListener}"
+            />
+
+            <TextView
+                    android:id="@+id/userNameText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dip"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="20sp"
+                    android:text="@{userdata.name}"
+            />
+
+            <TextView
+                    android:id="@+id/companyText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dip"
+                    android:textColor="@android:color/white"
+                    android:text="@{userdata.company}"
+
+            />
+
+        </LinearLayout>
+    </LinearLayout>
+</layout>

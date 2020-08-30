@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:textSize="@dimen/sp_14"
+    android:textColor="@color/color_indigo_26415d"
+    tools:text="@string/price_per_day"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+</TextView>

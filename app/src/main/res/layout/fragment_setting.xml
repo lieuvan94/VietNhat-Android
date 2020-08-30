@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <import type="vn.hexagon.vietnhat.constant.APIConstant"/>
+        <variable
+            name="setting"
+            type="vn.hexagon.vietnhat.ui.setting.SettingViewModel" />
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.setting.SettingFragment">
+
+    <ImageView
+        android:id="@+id/setting_header_banner"
+        android:contentDescription="@null"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        app:imageUrl="@{setting.imageBanner}"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/backgrounds/scenic[7]" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/gridRecycler"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/setting_header_banner" />
+
+
+    <RelativeLayout
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?attr/selectableItemBackground"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="82dp"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <RelativeLayout
+            android:id="@+id/settingLogoutBtn"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@drawable/circle_menu_white_bg"
+            android:elevation="2dp"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/setting_logout_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:contentDescription="@null"
+                android:cropToPadding="true"
+                android:elevation="2dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_logout" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/setting_logout_lbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/settingLogoutBtn"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_8"
+            android:includeFontPadding="false"
+            android:text="@string/setting_circle_menu_logout"
+            android:textColor="@color/color_indigo_26415d"
+            android:textSize="@dimen/sp_14" />
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/settingNotLoginArea"
+        layout="@layout/fragment_unlogin_common"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

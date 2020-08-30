@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color_bg_dialog_outside"
+            android:paddingLeft="@dimen/dp_16"
+            android:paddingRight="@dimen/dp_16">
+
+        <RelativeLayout
+                style="@style/DialogStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+            <TextView
+                    android:id="@+id/dialogTitle"
+                    style="@style/TitleDialogStyle"
+                    android:text="@string/dialog_title_select_post" />
+
+            <Spinner
+                    android:id="@+id/postDialogSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_40"
+                    android:layout_below="@+id/dialogTitle"
+                    android:layout_marginTop="@dimen/dp_30"
+                    android:background="@drawable/drop_down_list_bg" />
+
+            <Button
+                    android:id="@+id/postDialogContinueBtn"
+                    style="@style/PinkButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/postDialogSpinner"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/dp_30"
+                    android:layout_marginBottom="@dimen/dp_40"
+                    android:text="@string/continue_button_lbl" />
+
+            <ImageView
+                    android:id="@+id/closeBtn"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:background="?attr/selectableItemBackground"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_close" />
+        </RelativeLayout>
+    </RelativeLayout>
+</layout>

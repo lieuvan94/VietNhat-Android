@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/postPreviewImgForeground"
+        android:layout_width="@dimen/dp_137"
+        android:layout_height="@dimen/dp_100"
+        android:background="@drawable/round_corner_img_black_bg"
+        android:layout_margin="@dimen/dp_8"
+        android:clickable="true"
+        android:focusable="true">
+
+        <ImageView
+            android:id="@+id/realPostPreviewImg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/round_corner_img_black_bg"
+            android:contentDescription="@null"
+            android:scaleType="fitCenter" />
+
+        <View
+            android:layout_width="@dimen/dp_137"
+            android:layout_height="@dimen/dp_100"
+            android:foreground="?attr/selectableItemBackground" />
+    </RelativeLayout>
+</layout>

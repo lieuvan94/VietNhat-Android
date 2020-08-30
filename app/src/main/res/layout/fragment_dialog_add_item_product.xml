@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+            android:id="@+id/productDialogParent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color_bg_dialog_outside"
+            android:paddingLeft="@dimen/dp_20"
+            android:paddingRight="@dimen/dp_20">
+
+        <RelativeLayout
+                style="@style/DialogStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+            <TextView
+                    android:id="@+id/spaAddDialogTitle"
+                    style="@style/TitleDialogStyle"
+                    android:text="@string/dialog_title_product_info" />
+
+            <TextView
+                    android:id="@+id/spaAddDialogNameLbl"
+                    style="@style/LabelDialogStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/spaAddDialogTitle"
+                    android:text="@string/dialog_add_item_name_lbl"
+                    android:textStyle="bold" />
+
+            <EditText
+                    android:id="@+id/spaAddDialogEdName"
+                    style="@style/EditTextDialogStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/spaAddDialogNameLbl"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:hint="@string/dialog_add_item_name_lbl" />
+
+            <TextView
+                    android:id="@+id/spaAddDialogPriceLbl"
+                    style="@style/LabelDialogStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/spaAddDialogEdName"
+                    android:text="@string/price_lbl"
+                    android:textStyle="bold" />
+
+            <TextView
+                    android:id="@+id/spaAddDialogPriceUnitLbl"
+                    style="@style/LabelDialogStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_below="@+id/spaAddDialogEdName"
+                    android:text="@string/money_unit"
+                    android:textStyle="normal" />
+
+            <EditText
+                    android:id="@+id/spaAddDialogEdPrice"
+                    style="@style/EditTextDialogStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/spaAddDialogPriceLbl"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:inputType="numberDecimal"
+                    android:hint="@string/price_lbl" />
+
+            <TextView
+                    android:id="@+id/imageLbl"
+                    style="@style/LabelDialogStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/spaAddDialogEdPrice"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:layout_marginTop="@dimen/dp_28"
+                    android:text="@string/image_lbl_normal" />
+
+            <Button
+                    android:id="@+id/spaAddDialogImgSelector"
+                    style="@style/WhiteButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/spaAddDialogEdPrice"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="@dimen/dp_16"
+                    android:text="@string/select_image_lbl" />
+
+            <LinearLayout
+                    android:id="@+id/spaPreviewImgArea"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/spaAddDialogImgSelector"
+                    android:layout_marginTop="@dimen/dp_4"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    tools:ignore="UseCompoundDrawables">
+
+                <ImageView
+                        android:id="@+id/spaAddDialogPreviewImg"
+                        android:layout_width="@dimen/dp_40"
+                        android:layout_height="@dimen/dp_40"
+                        android:contentDescription="@null"
+                        android:scaleType="fitXY"
+                        android:background="@drawable/round_corner_img_bg"/>
+
+                <TextView
+                        android:id="@+id/spaAddDialogPreviewName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/dp_8"
+                        android:textColor="@color/color_indigo_26415d"
+                        android:textSize="@dimen/sp_14"
+                        tools:text="name_company_demo.jpg" />
+            </LinearLayout>
+
+            <Button
+                    android:id="@+id/spaAddDialogConfirmBtn"
+                    style="@style/PinkButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/spaPreviewImgArea"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/dp_24"
+                    android:layout_marginBottom="@dimen/dp_40"
+                    android:text="@string/continue_button_lbl" />
+
+            <ImageView
+                    android:id="@+id/spaAddDialogCloseBtn"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_close" />
+        </RelativeLayout>
+    </RelativeLayout>
+</layout>

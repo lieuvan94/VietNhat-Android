@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="register"
+            type="vn.hexagon.vietnhat.ui.auth.RegisterViewModel" />
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/registerTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="120dp"
+        android:text="@string/register_title"
+        android:textColor="@color/color_indigo_26415d"
+        android:textSize="@dimen/sp_30"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/loginTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:text="@string/login_title"
+        android:textColor="@color/color_grey_9b9b9b"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintBaseline_toBaselineOf="@+id/registerTitle"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/login_sub_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="26dp"
+        android:text="@string/login_sub_description"
+        android:textColor="@color/color_indigo_26415d"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registerTitle" />
+
+    <TextView
+        android:id="@+id/register_name_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/register_name_title"
+        android:textColor="@color/color_indigo_26415d"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_sub_description" />
+
+    <EditText
+        android:id="@+id/registerEdName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/edit_text_common_bg"
+        android:ems="10"
+        android:hint="@string/register_name_title"
+        android:inputType="textPersonName"
+        android:textColorHint="@color/color_grey_9b9b9b"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/register_name_title" />
+
+    <TextView
+        android:id="@+id/register_phone_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/register_name_phone_title"
+        android:textColor="@color/color_indigo_26415d"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/registerEdName" />
+
+
+    <com.hbb20.CountryCodePicker
+        android:id="@+id/countryCodePickerRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_40"
+        android:layout_marginStart="@dimen/dp_16"
+        android:background="@drawable/country_code_bg"
+        android:gravity="center_vertical"
+        app:ccp_contentColor="@color/color_grey_9b9b9b"
+        app:ccp_defaultNameCode="VN"
+        app:ccp_rememberLastSelection="true"
+        app:ccp_showArrow="false"
+        app:ccp_showNameCode="false"
+        app:ccp_textSize="@dimen/sp_14"
+        app:layout_constraintBottom_toBottomOf="@+id/registerEdPhone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/registerEdPhone" />
+
+    <EditText
+            android:id="@+id/registerEdPhone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/edit_text_common_bg"
+            android:ems="10"
+            android:hint="@string/register_name_phone_title"
+            android:inputType="phone"
+            android:textColorHint="@color/color_grey_9b9b9b"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/countryCodePickerRegister"
+            app:layout_constraintTop_toBottomOf="@id/register_phone_title" />
+
+    <TextView
+        android:id="@+id/register_password_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/register_password_title"
+        android:textColor="@color/color_indigo_26415d"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/registerEdPhone" />
+
+    <EditText
+        android:id="@+id/registerEdPassword"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/edit_text_common_bg"
+        android:ems="10"
+        android:hint="@string/register_password_title"
+        android:inputType="textPassword"
+        android:textColorHint="@color/color_grey_9b9b9b"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/register_password_title" />
+
+    <TextView
+        android:id="@+id/register_repassword_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/register_repassword_title"
+        android:textColor="@color/color_indigo_26415d"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/registerEdPassword" />
+
+    <EditText
+        android:id="@+id/registerEdRepassword"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/edit_text_common_bg"
+        android:ems="10"
+        android:hint="@string/register_repassword_title"
+        android:inputType="textPassword"
+        android:textColorHint="@color/color_grey_9b9b9b"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/register_repassword_title" />
+
+    <Button
+        android:id="@+id/registerBtn"
+        style="@style/IndigoButtonStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/register_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registerEdRepassword" />
+
+    <ImageView
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="48dp"
+        android:padding="@dimen/dp_4"
+        android:contentDescription="@null"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        app:layout_constraintBottom_toTopOf="@+id/registerTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_back" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

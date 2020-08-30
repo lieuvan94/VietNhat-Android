@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "719685814971",
+    "firebase_url": "https://vietapp.firebaseio.com",
+    "project_id": "vietapp",
+    "storage_bucket": "vietapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:719685814971:android:a289e0d49f33767802779e",
+        "android_client_info": {
+          "package_name": "vn.hexagon.vietnhat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "719685814971-9llhu79hpu0r86n3c4t9q8rlc2gfmopb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "vn.hexagon.vietnhat",
+            "certificate_hash": "1635902d0c068723e70b9c6c92267ef9fde5bab5"
+          }
+        },
+        {
+          "client_id": "719685814971-up9i4dv7p95d9s3he97o3rotko8nlqfs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "vn.hexagon.vietnhat",
+            "certificate_hash": "c555a04adc58412b8a329b97adfba871413e97c1"
+          }
+        },
+        {
+          "client_id": "719685814971-lgjvsofb6i910gh091cdjaa0apjleq6e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvNRUi7yn0NLSU0N2LdxN4ig9JW1kGR04"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "719685814971-jlgjr5qo0hq3ghf4lvrt5h276fj4fmbr.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "719685814971-nbd34chntqq4mab0b64mc3iu6vuj8tib.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "vn.hexagon.mobile.vietapp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

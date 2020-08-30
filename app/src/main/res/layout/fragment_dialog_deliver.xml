@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_bg_dialog_outside"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/dp_16"
+        android:paddingRight="@dimen/dp_16">
+
+        <RelativeLayout
+            style="@style/DialogStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/phoneLbl"
+                style="@style/TitleDialogStyle"
+                android:text="@string/dialog_title_deliver" />
+
+            <EditText
+                android:id="@+id/inputDeliver"
+                style="@style/EditTextDialogStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/phoneLbl"
+                android:layout_marginTop="@dimen/dp_30"
+                android:hint="@string/hint_input_require" />
+
+            <TextView
+                android:id="@+id/wayDeliver"
+                style="@style/LabelDialogStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/inputDeliver"
+                android:text="@string/way_deliver" />
+
+            <Spinner
+                android:id="@+id/deliverWaySelector"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_40"
+                android:layout_below="@+id/wayDeliver"
+                android:layout_marginTop="@dimen/dp_8"
+                android:entries="@array/roadType"
+                android:background="@drawable/drop_down_list_bg"/>
+
+
+            <Button
+                android:id="@+id/deliverSeekBtn"
+                style="@style/PinkButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/deliverWaySelector"
+                android:layout_marginBottom="@dimen/dp_30"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/dp_30"
+                android:text="@string/search_button_lbl" />
+
+            <ImageView
+                android:id="@+id/deliverCloseBtn"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/dp_20"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_close" />
+        </RelativeLayout>
+    </RelativeLayout>
+</layout>

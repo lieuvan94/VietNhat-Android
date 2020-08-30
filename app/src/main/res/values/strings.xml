@@ -1,0 +1,269 @@
+<resources>
+    <string name="app_name">Việt Group</string>
+    <string name="place_api_key">AIzaSyAhFhRCg4-jp2Qz9l6xqjJt7yEeHvM-rqg</string>
+    <string name="facebook_app_id">2374512872811561</string>
+    <string name="fb_login_protocol_scheme">fb2374512872811561</string>
+    <string name="position" translatable="false">position</string>
+
+    <!--Splash title-->
+    <string name="splash_title">Kết nối cộng đồng Việt</string>
+    <!--Login screen-->
+    <string name="login_title">Đăng Nhập</string>
+    <string name="register_title">Đăng Ký</string>
+    <string name="login_sub_description">Đăng nhập để biết thêm nhiều thông tin hơn nhé</string>
+    <string name="login_phone_title">Số điện thoại</string>
+    <string name="login_password_title">Mật khẩu</string>
+    <string name="login_or_title">Hoặc</string>
+    <string name="login_with_email_text_btn">I will use email or phone</string>
+    <string name="login_forgot_password_link">Quên mật khẩu?</string>
+
+    <!--Register screen-->
+    <string name="register_sub_description">Đăng ký để trở thành thành viên của chúng tôi</string>
+    <string name="register_name_title">Họ và tên</string>
+    <string name="register_name_phone_title">Số điện thoại</string>
+    <string name="register_password_title">Mật khẩu</string>
+    <string name="register_repassword_title">Nhập lại mật khẩu</string>
+
+    <!--Home screen circle menu-->
+    <string name="home_sub_title_lbl">Chúng tôi có thể giúp bạn?</string>
+    <string name="home_circle_menu_market">Siêu thị</string>
+    <string name="home_circle_menu_work">Việc làm</string>
+    <string name="home_circle_menu_translator">Phiên dịch</string>
+    <string name="home_circle_menu_news">Báo chí</string>
+    <string name="home_circle_menu_travel">Du lịch</string>
+    <string name="home_circle_menu_hide_car">Thuê xe</string>
+    <string name="home_circle_menu_restaurant">Nhà Hàng</string>
+    <string name="home_circle_menu_spa">Spa</string>
+    <string name="home_circle_menu_phone">Fonehouse</string>
+    <string name="home_circle_menu_visa">Làm visa</string>
+    <string name="home_circle_menu_deliver">Vận chuyển</string>
+    <string name="home_circle_menu_support">Hướng dẫn</string>
+    <string name="home_circle_menu_ads">Rao vặt</string>
+    <string name="home_circle_menu_your_news">Đăng tin</string>
+
+    <!--Dialog Title-->
+    <string name="dialog_title_market">Siêu Thị</string>
+    <string name="dialog_title_work">Việc Làm</string>
+    <string name="dialog_title_translator">Phiên Dịch</string>
+    <string name="dialog_title_news">Báo Chí</string>
+    <string name="dialog_title_travel">Du Lịch</string>
+    <string name="dialog_title_hide_car">Thuê Xe</string>
+    <string name="dialog_title_restaurant">Nhà Hàng</string>
+    <string name="dialog_title_spa">Spa</string>
+    <string name="dialog_title_phone">Fonehouse</string>
+    <string name="dialog_title_visa">Làm Visa</string>
+    <string name="dialog_title_deliver">Vận Chuyển Máy Bay</string>
+    <string name="dialog_title_support">Hướng dẫn</string>
+    <string name="dialog_title_ads">Rao Vặt</string>
+    <string name="dialog_title_your_news">Đăng Tin</string>
+
+    <!--Setting screen circle menu-->
+    <string name="setting_circle_menu_account">Tài khoản</string>
+    <string name="setting_circle_menu_purchase">Nạp tiền</string>
+    <string name="setting_circle_menu_notify">Thông báo</string>
+    <string name="setting_circle_menu_guide">Hướng dẫn</string>
+    <string name="setting_circle_menu_rate">Đánh giá</string>
+    <string name="setting_circle_menu_logout">Đăng xuất</string>
+
+    <!--Home screen bottom menu-->
+    <string name="home_bottom_menu_home">Trang chủ</string>
+    <string name="home_bottom_menu_messenger">Tin nhắn</string>
+    <string name="home_bottom_menu_news">Quản lý tin đăng</string>
+    <string name="home_bottom_menu_favourite">Yêu thích</string>
+    <string name="home_bottom_menu_setting">Cài đặt</string>
+
+    <!--Variable local-->
+    <string name="variable_local_country_cd">country_cd_user</string>
+    <string name="variable_local_phone">phone_user</string>
+    <string name="variable_local_password">password_user</string>
+    <string name="variable_local_user_id">user_id</string>
+
+    <!--Screen title-->
+    <string name="create_post_mart">Siêu Thị Việt</string>
+    <string name="create_post_job">Tìm Việc</string>
+    <string name="create_post_translator">Người Phiên Dịch</string>
+    <string name="create_post_news">Thông Tin Báo Chí</string>
+    <string name="create_post_travel">Hướng Dẫn Viên Du Lịch</string>
+    <string name="create_post_support">Cần Trợ Giúp</string>
+    <string name="create_post_visa">Làm Visa</string>
+    <string name="create_post_ads">Rao Vặt</string>
+    <string name="create_post_deliver">Vận Chuyển Máy Bay</string>
+    <string name="create_post_car">Thuê Xe</string>
+    <string name="create_post_restaurant">Nhà Hàng</string>
+    <string name="create_post_phone">Fonehouse</string>
+    <string name="create_post_spa">Trung Tâm Spa</string>
+
+    <!--Others-->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hint_input_require">Nhập từ khóa</string>
+    <string name="address_label">Địa chỉ</string>
+    <string name="address_lbl">Tỉnh thành</string>
+    <string name="input_address_hint">Tìm kiếm theo khu vực</string>
+    <string name="price_lbl">Giá</string>
+    <string name="search_button_lbl">Tìm kiếm</string>
+    <string name="dialog_new_subject">Chủ đề</string>
+    <string name="salary_lbl">Lương</string>
+    <string name="money_unit">JPY</string>
+    <string name="dynamic_money_unit">%1s JPY</string>
+    <string name="price_per_day">JPY/ngày</string>
+    <string name="dynamic_money_per_day">%1s JPY/ngày</string>
+    <string name="price_per_people">JPY/người</string>
+    <string name="dynamic_price_per_people">%1s JPY/người</string>
+    <string name="dynamic_money_per_hour">%1s JPY/giờ</string>
+    <string name="dynamic_money_per_month">%1s JPY/tháng</string>
+    <string name="job_type_lbl">Ngành nghề</string>
+    <string name="job_detail_lbl">Hình thức công việc</string>
+    <string name="time_lbl">Thời gian</string>
+    <string name="total_lbl">Số lượng</string>
+    <string name="type_lbl">Loại xe</string>
+    <string name="car_model_lbl">Tên hãng xe</string>
+    <string name="car_price_lbl">Giá</string>
+    <string name="service_lbl">Dịch vụ</string>
+    <string name="product_lbl">Sản phẩm</string>
+    <string name="way_deliver">Cung đường</string>
+    <string name="weight_deliver">Cân nặng</string>
+    <string name="receiver_lbl">Khu vực nhận hàng</string>
+    <string name="send_lbl">Khu vực giao hàng</string>
+    <string name="list_screen_error_msg">Vui lòng kiểm tra lại đường truyền.</string>
+    <string name="full_name">Họ Tên</string>
+    <string name="email_lbl">Email</string>
+    <string name="change_info">Đổi thông tin</string>
+    <string name="account_title">Tài Khoản</string>
+    <string name="gmail_lbl">Gmail</string>
+    <string name="facebook_lbl">Facebook</string>
+    <string name="error_password_empty">Mật khẩu không thể để trống</string>
+    <string name="error_password_too_short">Password phải từ 6 ký tự trở lên</string>
+    <string name="error_phone_empty">Số điện thoại không thể để trống</string>
+    <string name="error_phone_not_correct">Số điện thoại không đúng định dạng</string>
+    <string name="error_password_not_match">Mật khẩu không khớp nhau</string>
+    <string name="hint_input_time">Nhập thời gian</string>
+
+    <string name="post_screen_title">Danh Sách Tin Đăng</string>
+    <string name="dialog_title_select_post">Chọn tin đăng</string>
+    <string name="continue_button_lbl">Tiếp tục</string>
+    <string name="post_title_lbl">Tiêu đề tin đăng</string>
+    <string name="select_image_lbl">Chọn ảnh</string>
+    <string name="image_lbl">Ảnh\n(Tối đa 4 ảnh)</string>
+    <string name="image_lbl_normal">Ảnh</string>
+    <string name="price_lbl_post">Giá tiền</string>
+    <string name="content_lbl">Nội dung</string>
+    <string name="note_lbl">Ghi chú</string>
+    <string name="up_top_lbl">Gim bài lên TOP</string>
+    <string name="commit_lbl">Đăng tin</string>
+    <string name="day_unit_lbl">/ngày</string>
+
+    <string name="post_job_title">Tiêu đề tin đăng</string>
+    <string name="job_kind_lbl">Hình thức làm việc</string>
+    <string name="job_company_type_lbl">Loại công việc</string>
+    <string name="job_company_addr_lbl">Địa chỉ làm việc</string>
+    <string name="job_salary_lbl">Tiền lương</string>
+    <string name="job_content">Nội dung công việc</string>
+    <string name="messenger_lbl">Người đưa tin</string>
+    <string name="dialog_title_confirm_top">Thông Báo</string>
+    <string name="dialog_confirm_top_content">Bạn sẽ mất <b>100.000 VNĐ</b> để bài đăng lên đầu trang trong <b>48 giờ</b>. Bạn có muốn tiếp tục</string>
+    <string name="dialog_confirm_top_btn">Đồng Ý</string>
+    <string name="dialog_done_content">Tin đăng của bạn được đăng\n thành công</string>
+    <string name="travel_price_lbl">Giá dịch vụ</string>
+    <string name="deliver_comp_name_lbl">Tên công ty yêu cầu</string>
+    <string name="deliver_way_lbl">Cung đường</string>
+    <string name="address_received_label">Điểm nhận hàng</string>
+    <string name="address_taken_label">Điểm trả hàng</string>
+    <string name="deliver_type_label">Loại hàng</string>
+    <string name="travel_weight_lbl">Cân nặng</string>
+    <string name="deliver_price_lbl">Giá yêu cầu</string>
+    <string name="support_address_lbl">Địa điểm</string>
+    <string name="reveal_all_product_link">Xem tất cả %1s sản phẩm</string>
+    <string name="add_product_lbl">Thêm sản phẩm</string>
+    <string name="dialog_title_product_info">Thông Tin Sản Phẩm</string>
+    <string name="dialog_add_item_name_lbl">Tên</string>
+    <string name="unit_lbl">Đơn vị</string>
+    <string name="common_error_ed_empty">Không thể để trống</string>
+    <string name="road_type_vn_jp">Việt - Nhật</string>
+    <string name="road_type_jp_vn">Nhật - Việt</string>
+    <string name="create_post_fav">Bài Viết Đã Lưu</string>
+    <string name="service_name_mart">\"Siêu Thị\"</string>
+    <string name="service_name_job">\"Việc làm\"</string>
+    <string name="variable_local_avt">user_avt</string>
+    <string name="variable_local_platform">local_platform</string>
+    <string name="post_detail_author_template">%1s  -  %2s</string>
+    <string name="setting_guide_title">Hướng Dẫn</string>
+
+    <!--Dialog Alert-->
+    <string name="alert_dialog_title">Error</string>
+    <string name="alert_dialog_confirm_btn">OK</string>
+    <string name="rate_box_label">Sự hài lòng của bạn khi sử dụng ứng dụng</string>
+    <string name="setting_rate_supplement">Góp ý</string>
+    <string name="setting_supplement_hint">Hãy góp ý cho chúng tôi để ứng dụng ngày một hoàn thiện hơn.</string>
+    <string name="setting_rate_button">Gửi đánh giá</string>
+    <string name="setting_rate_title">Đánh giá</string>
+    <string name="setting_notify_title">Thông Báo</string>
+    <string name="unlogin_message">Không có dữ liệu.\nBạn cần đăng nhập để sử dụng tính năng này</string>
+    <string name="token">account_token</string>
+    <string name="price_not_login">Đăng nhập để xem chi tiết</string>
+    <string name="detail_post_contact_us">Hãy liên hệ với chúng tôi</string>
+
+    <!--  Chat screen-->
+    <string name="hint_input_message">Viết tin nhắn...</string>
+    <string name="deliver_taken_spot">Điểm nhận</string>
+    <string name="detail_receive_spot">Điểm trả</string>
+    <string name="detail_product_type">Loại hàng: %1s</string>
+    <string name="detail_product_weight">Cân nặng: %1s</string>
+    <string name="detail_phone">Số điện thoại: %1s</string>
+    <string name="min_price">Thấp nhất</string>
+    <string name="max_price">Cao nhất</string>
+    <string name="symbol_price">-</string>
+    <string name="change_pass_lbl">Đổi mật khẩu</string>
+    <string name="common_error_img_empty">Bạn cần chọn ảnh cho mục này</string>
+    <string name="common_error_email_format">Định dạng email không đúng</string>
+    <string name="photo_select_title">Chọn ảnh</string>
+    <string name="photo_dialog_cancel">Huỷ bỏ</string>
+    <string name="remove_alert_message">Đã xoá một mục</string>
+    <string name="detail_job_type_template">Hình thức: %1s</string>
+    <string name="detail_job_category_template">Loại công việc: %1s</string>
+    <string name="sms_screen_title">Nhập mã từ SMS</string>
+    <string name="confirm_code_lbl">Mã xác nhận</string>
+    <string name="content_sms_code_with_phone_pre">Bạn sẽ sớm nhận được một tin nhắn đến số\u0020</string>
+    <string name="content_sms_code_with_phone_suf">\u0020kèm mã xác nhận.</string>
+    <string name="confirm_text_button_sms">xác nhận</string>
+    <string name="resend_sms_code_lbl">Bạn chưa nhận được SMS. Gửi lại?</string>
+    <string name="change_password_title">Mật khẩu mới</string>
+    <string name="content_change_password">Bạn vui lòng nhập mật khẩu mới để hoàn thành thao tác.</string>
+    <string name="confirm_change_password">Hoàn thành</string>
+    <string name="setting_title">Cá Nhân</string>
+    <string name="detail_company_name">Tên công ty: %1s</string>
+    <string name="add_favourite_message">Đã thêm mục này vào phần ưa thích</string>
+    <string name="remove_favourite_message">Đã xoá mục này khỏi phần ưa thích</string>
+    <string name="thank_for_rating">Cám ơn phản hồi của bạn.</string>
+    <string name="remove_product_message">Đã xóa sản phẩm</string>
+    <string name="limit_photo_message">Số lượng ảnh đã đạt tối đa</string>
+    <string name="edit_lbl">Sửa</string>
+    <string name="delete_lbl">Xoá</string>
+    <string name="verify_title_lbl">Xác Thực Tài Khoản</string>
+    <string name="verify_sub_description">Vui lòng nhập mã số vừa được hệ thống gửi vào số điện thoại của bạn</string>
+    <string name="verify_input_lbl">Nhập mã số</string>
+    <string name="verify_resend_code_lbl">Gửi lại</string>
+    <string name="verify_lbl">xác thực</string>
+    <string name="default_notification_channel_id">chapp_channel_id</string>
+    <string name="fcm_message">Title</string>
+    <string name="verify_empty_message">Mời nhập mã xác nhận</string>
+    <string name="resend_code_message">Hệ thống sẽ gửi mã xác nhận qua tin nhắn</string>
+    <string name="alert_dialog_notice">Thông Báo</string>
+    <string name="verify_not_match">Mã xác nhận không chính xác. Vui lòng thử lại.</string>
+    <string name="change_pass_success">Cập nhật mật khẩu mới thành công</string>
+    <string name="common_not_login_error">Bạn cần phải đăng nhập để sử dụng tính năng này</string>
+    <string name="comment_title">Bình luận</string>
+    <string name="like_title">%1s lượt thích</string>
+    <string name="error_phone_number">Số điện thoại không tồn tại</string>
+    <string name="liked_list_title">Danh sách quan tâm</string>
+    <string name="like_title_default">0 lượt thích</string>
+    <string name="success_title">Thành công</string>
+    <string name="image_lbl_max_size">Ảnh\n(Tối đa 10 ảnh)</string>
+    <string name="contact_lbl">Liên hệ: %1s</string>
+    <string name="dialog_confirm_close">Bỏ chọn các mục này?</string>
+    <string name="dialog_confirm_close_msg">Nếu quay lại thì bạn sẽ bỏ chọn các mục vừa chọn.</string>
+    <string name="dialog_confirm_close_cancel">HUỶ</string>
+    <string name="dialog_confirm_close_back">Bỏ chọn các mục</string>
+    <string name="confirm_ok">OK</string>
+    <string name="regrant_access_permission">Cấp lại quyền truy cập bộ nhớ ?</string>
+    <string name="err_msg_empty_address_map">Xin vui lòng nhập địa chỉ của bạn.</string>
+</resources>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootContainer"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/action_bar_base_height"
+    android:orientation="vertical"
+    >
+
+<!--  <ImageView
+      android:id="@+id/leftActionBarButton"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="@dimen/dp_16"
+      android:layout_alignParentBottom="true"
+      android:layout_marginBottom="@dimen/dp_12"
+      android:src="@drawable/ic_back"
+      android:padding="@dimen/dp_4"
+      android:background="?attr/selectableItemBackgroundBorderless"
+      android:scaleType="fitXY"
+      tools:ignore="ContentDescription"
+      />-->
+
+  <ImageView
+      android:id="@+id/leftActionBarButton"
+      android:layout_width="@dimen/dp_18"
+      android:layout_height="@dimen/dp_18"
+      android:layout_centerVertical="true"
+      android:layout_marginStart="@dimen/dp_16"
+      android:src="@drawable/ic_back"
+      android:background="?attr/selectableItemBackgroundBorderless"
+      tools:ignore="ContentDescription"
+      />
+
+  <FrameLayout
+      android:id="@+id/contentActionBarLayout"
+      android:layout_width="@dimen/action_bar_base_left_button_width"
+      android:layout_height="@dimen/action_bar_base_left_button_height"
+      android:layout_centerVertical="true"
+      android:layout_toEndOf="@+id/leftActionBarButton"
+      android:layout_toStartOf="@id/rightActionBarButton"
+      />
+
+  <ImageView
+      android:id="@+id/rightActionBarButton"
+      android:layout_width="@dimen/dp_18"
+      android:layout_height="@dimen/dp_18"
+      android:layout_alignParentEnd="true"
+      android:layout_centerVertical="true"
+      android:layout_marginEnd="@dimen/dp_16"
+      android:background="?attr/selectableItemBackgroundBorderless"
+      android:visibility="invisible"
+      tools:ignore="ContentDescription"
+      />
+
+<!--  <ImageView
+      android:id="@+id/rightActionBarButton"
+      android:layout_width="@dimen/dp_18"
+      android:layout_height="@dimen/dp_18"
+      android:layout_alignParentEnd="true"
+      android:layout_alignParentBottom="true"
+      android:layout_marginBottom="@dimen/dp_12"
+      android:layout_marginEnd="@dimen/dp_16"
+      android:background="?attr/selectableItemBackgroundBorderless"
+      android:scaleType="fitXY"
+      android:visibility="invisible"
+      tools:ignore="ContentDescription"
+      />
+  -->
+  <View
+      android:layout_width="match_parent"
+      android:layout_height="@dimen/dp_3"
+      android:layout_alignParentBottom="true"
+      android:background="@drawable/shadow_line_tool_bar"
+      />
+</RelativeLayout>

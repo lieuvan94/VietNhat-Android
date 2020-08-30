@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="vn.hexagon.vietnhat.ui.post.deliver.DeliverPostViewModel" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_gray_f4f5f7">
+
+        <RelativeLayout
+            android:id="@+id/deliverPostParent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/deliverTitle"
+                style="@style/LabelDialogStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_24"
+                android:text="@string/post_title_lbl" />
+
+            <EditText
+                android:id="@+id/deliverPostEdTitle"
+                style="@style/EditTextDialogStyle"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/deliverTitle"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:hint="@string/post_title_lbl"
+                android:text="@={viewmodel.title}" />
+
+            <TextView
+                android:id="@+id/deliverCompanyName"
+                style="@style/LabelDialogStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/deliverPostEdTitle"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_24"
+                android:text="@string/deliver_comp_name_lbl" />
+
+            <EditText
+                android:id="@+id/deliverPostEdCompName"
+                style="@style/EditTextDialogStyle"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/deliverCompanyName"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:hint="@string/deliver_comp_name_lbl"
+                android:text="@={viewmodel.companyName}" />
+
+            <TextView
+                android:id="@+id/deliverWay"
+                style="@style/LabelDialogStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/deliverPostEdCompName"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_24"
+                android:text="@string/deliver_way_lbl" />
+
+            <Spinner
+                android:id="@+id/deliverPostSpinnerWay"
+                style="@style/SpinnerDialogStyle"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/deliverWay"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:entries="@array/roadType" />
+
+            <TextView
+                android:id="@+id/addressTaken"
+                style="@style/LabelDialogStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/deliverPostSpinnerWay"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_16"
+                android:text="@string/address_received_label" />
+
+            <EditText
+                android:id="@+id/deliverPostEdAddressTaken"
+                style="@style/EditTextDialogStyle"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/addressTaken"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:focusable="false"
+                android:hint="@string/address_received_label"
+                android:text="@={viewmodel.addressSend}" />
+
+            <TextView
+                android:id="@+id/addressReceived"
+                style="@style/LabelDialogStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/deliverPostEdAddressTaken"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_16"
+                android:text="@string/address_taken_label" />
+
+            <EditText
+                android:id="@+id/deliverPostEdAddressReceived"
+                style="@style/EditTextDialogStyle"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/addressReceived"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:focusable="false"
+                android:hint="@string/address_taken_label"
+                android:singleLine="true"
+                android:text="@={viewmodel.addressReceived}" />
+
+            <TextView
+                android:id="@+id/packageType"
+                style="@style/LabelDialogStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/deliverPostEdAddressReceived"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_16"
+                android:text="@string/deliver_type_label" />
+
+            <EditText
+                android:id="@+id/deliverPostEdType"
+                style="@style/EditTextDialogStyle"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/packageType"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:hint="@string/deliver_type_label"
+                android:text="@={viewmodel.productType}" />
+
+            <TextView
+                android:id="@+id/deliverWeightLbl"
+                style="@style/LabelDialogStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/deliverPostEdType"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_16"
+                android:text="@string/travel_weight_lbl" />
+
+            <EditText
+                android:id="@+id/deliverPostEdWeight"
+                style="@style/EditTextDialogStyle"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/deliverWeightLbl"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:hint="@string/travel_weight_lbl"
+                android:text="@={viewmodel.weight}" />
+
+            <TextView
+                android:id="@+id/deliverPriceLbl"
+                style="@style/LabelDialogStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/deliverPostEdWeight"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_16"
+                android:text="@string/deliver_price_lbl" />
+
+            <TextView
+                android:id="@+id/deliverPriceUnitLbl"
+                style="@style/LabelDialogStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/deliverPostEdWeight"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/dp_16"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:text="@string/money_unit" />
+
+            <EditText
+                android:id="@+id/deliverPostEdPrice"
+                style="@style/EditTextDialogStyle"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/deliverPriceLbl"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:hint="@string/deliver_price_lbl"
+                android:inputType="number"
+                android:text="@={viewmodel.price}" />
+
+            <TextView
+                android:id="@+id/deliverPhoneLbl"
+                style="@style/LabelDialogStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/deliverPostEdPrice"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_16"
+                android:text="@string/login_phone_title" />
+
+            <com.hbb20.CountryCodePicker
+                android:id="@+id/deliverCountryCodePicker"
+                android:layout_width="@dimen/dp_88"
+                android:layout_height="@dimen/dp_40"
+                android:layout_below="@+id/deliverPhoneLbl"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_8"
+                android:background="@drawable/country_code_bg"
+                android:gravity="center"
+                app:ccp_contentColor="@color/color_grey_9b9b9b"
+                app:ccp_defaultNameCode="VN"
+                app:ccp_rememberLastSelection="true"
+                app:ccp_showArrow="false"
+                app:ccp_showNameCode="false"
+                app:ccp_textSize="@dimen/sp_14" />
+
+            <EditText
+                android:id="@+id/deliverPostEdPhone"
+                style="@style/EditTextDialogStyle"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/deliverPhoneLbl"
+                android:layout_marginStart="@dimen/dp_12"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:layout_toEndOf="@+id/deliverCountryCodePicker"
+                android:hint="@string/login_phone_title"
+                android:inputType="number"
+                android:text="@={viewmodel.phone}"
+                tools:ignore="TextFields" />
+
+            <TextView
+                android:id="@+id/imageLbl"
+                style="@style/LabelDialogStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/deliverPostEdPhone"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_28"
+                android:text="@string/image_lbl" />
+
+            <Button
+                android:id="@+id/deliverPostSelectBtn"
+                style="@style/WhiteButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/deliverPostEdPhone"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/dp_16"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:text="@string/select_image_lbl" />
+
+            <LinearLayout
+                android:id="@+id/deliverPostBarrier"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/deliverPostSelectBtn"
+                android:orientation="vertical">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/deliverPostRecyclerImg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:layout_marginTop="@dimen/dp_16"
+                    android:layout_marginEnd="@dimen/dp_16"
+                    android:layout_marginBottom="@dimen/dp_4"
+                    tools:itemCount="4"
+                    tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/layout_images_horizontal"
+                    tools:orientation="horizontal" />
+
+                <TextView
+                    android:id="@+id/messengerLbl"
+                    style="@style/LabelDialogStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:text="@string/note_lbl" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/deliverPostEdMessenger"
+                style="@style/EditTextDialogStyle"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/deliverPostBarrier"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:hint="@string/note_lbl"
+                android:text="@={viewmodel.note}" />
+
+            <CheckBox
+                android:id="@+id/deliverPostPinCheck"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/deliverPostEdMessenger"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_16"
+                android:text="@string/up_top_lbl"
+                android:textColor="@color/color_indigo_26415d" />
+
+            <Button
+                android:id="@+id/deliverPostCommitBtn"
+                style="@style/PinkButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/deliverPostPinCheck"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_30"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:layout_marginBottom="@dimen/dp_16"
+                android:text="@string/commit_lbl"
+                android:textColor="@color/colorWhite" />
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

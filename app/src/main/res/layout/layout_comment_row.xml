@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="position"
+            type="Integer" />
+
+        <variable
+            name="vm"
+            type="vn.hexagon.vietnhat.ui.detail.PostDetailViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/cmtUserAvatar"
+            imageAvatar="@{vm.detailPostResponse.data.comments[position].userAvatar}"
+            android:layout_width="@dimen/dp_60"
+            android:layout_height="@dimen/dp_60"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_16"
+            android:background="@drawable/shape_circle_layout"
+            android:contentDescription="@null"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@drawable/ic_ava_nodata" />
+
+        <TextView
+            android:id="@+id/cmtUserNm"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_16"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:text="@{vm.detailPostResponse.data.comments[position].userNm}"
+            android:textColor="@color/color_indigo_26415d"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/cmtUserAvatar"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Jason Chen" />
+
+        <TextView
+            android:id="@+id/cmtUserContent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_8"
+            android:text="@{vm.detailPostResponse.data.comments[position].content}"
+            app:layout_constraintEnd_toEndOf="@+id/cmtUserNm"
+            app:layout_constraintStart_toStartOf="@+id/cmtUserNm"
+            app:layout_constraintTop_toBottomOf="@+id/cmtUserNm"
+            tools:text="Chen Chen" />
+
+        <View
+            android:id="@+id/commentRowDivider"
+            android:layout_width="409dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/dp_16"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/barrier7" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="cmtUserNm,cmtUserContent,cmtUserAvatar"
+            tools:layout_editor_absoluteY="96dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

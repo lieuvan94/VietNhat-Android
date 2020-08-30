@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="colorPrimary">#008577</color>
+  <color name="colorPrimaryDark">#ffffff</color>
+  <color name="colorAccent">#D81B60</color>
+  <color name="colorWhite">#ffffff</color>
+  <color name="color_white_fafafa">#e6fafafa</color>
+
+  <color name="color_grey_c0c4d6">#C0C4D6</color>
+  <color name="color_pink_d14b79">#D14B79</color>
+  <color name="color_indigo_26415d">#26415D</color>
+  <color name="color_grey_9b9b9b">#9B9B9B</color>
+  <color name="color_grey_F4F5F7">#F4F5F7</color>
+  <color name="color_grey_E1E3E6">#E1E3E6</color>
+  <color name="color_grey_E2E5ED">#E2E5ED</color>
+  <color name="color_red_f75b5b">#F75B5B</color>
+  <color name="color_blue_395697">#395697</color>
+  <color name="color_text_link">#1E69CD</color>
+  <color name="color_text_link_active">#BBDEFB</color>
+  <color name="color_background_screen">#F4F5F7</color>
+
+  <color name="action_bar_background_color">@color/colorWhite</color>
+  <color name="action_bar_simple_text_title_color">#000000</color>
+  <color name="color_bg_dialog_outside">#D926415D</color>
+  <color name="color_grey_3666717b">#3666717B</color>
+  <color name="color_dfe1ea">#DFE1EA</color>
+  <color name="color_grey_80C0C4D6">#80C0C4D6</color>
+  <color name="color_grey_1426415D">#1426415D</color>
+  <color name="color_divider">#80DFE1EA</color>
+  <color name="color_gray_f4f5f7">#F4F5F7</color>
+  <color name="color_e2e5ed">#e2e5ed</color>
+
+  <color name="start_color_shadow_toolbar">#CC282828</color>
+  <color name="center_color_shadow_toolbar">#26ababab</color>
+  <color name="end_color_shadow_toolbar">#00dfdfdf</color>
+  <color name="color_shadow">#66333333</color>
+  <color name="color_black_vanta">#222222</color>
+</resources>

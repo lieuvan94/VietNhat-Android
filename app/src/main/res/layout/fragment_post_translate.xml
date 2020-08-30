@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="vn.hexagon.vietnhat.ui.post.trans.TransPostViewModel" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/transPostParent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_gray_f4f5f7"
+            android:paddingStart="@dimen/dp_16"
+            android:paddingEnd="@dimen/dp_16">
+
+            <TextView
+                android:id="@+id/titlePost"
+                style="@style/LabelDialogStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/post_title_lbl"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/postTransEdTitle"
+                style="@style/EditTextDialogStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:hint="@string/post_title_lbl"
+                android:inputType="text"
+                android:text="@={viewmodel.title}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titlePost" />
+
+            <TextView
+                android:id="@+id/addressPostLbl"
+                style="@style/LabelDialogStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/address_label"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/postTransEdTitle" />
+
+            <EditText
+                android:id="@+id/postTransEdAddress"
+                style="@style/EditTextDialogStyle"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                android:ems="10"
+                android:focusable="false"
+                android:hint="@string/address_label"
+                android:inputType="text"
+                android:singleLine="true"
+                android:text="@={viewmodel.address}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.156"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/addressPostLbl" />
+
+            <TextView
+                android:id="@+id/addressPostLbl2"
+                style="@style/LabelDialogStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/price_lbl_post"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/postTransEdAddress" />
+
+            <EditText
+                android:id="@+id/postTransEdPrice"
+                style="@style/EditTextDialogStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_8"
+                android:ems="10"
+                android:hint="@string/price_lbl"
+                android:inputType="number"
+                android:text="@={viewmodel.price}"
+                app:layout_constraintEnd_toStartOf="@+id/postTransSelectPriceUnit"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/addressPostLbl2" />
+
+            <Spinner
+                android:id="@+id/postTransSelectPriceUnit"
+                style="@style/SpinnerDialogStyle"
+                android:layout_width="0dp"
+                android:layout_marginTop="@dimen/dp_8"
+                android:entries="@array/translateType"
+                tools:listitem="@layout/layout_common_spinner"
+                android:spinnerMode="dropdown"
+                android:textSize="@dimen/sp_12"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/postTransEdPrice"
+                app:layout_constraintTop_toBottomOf="@+id/addressPostLbl2" />
+
+            <TextView
+                android:id="@+id/addressPostLbl3"
+                style="@style/LabelDialogStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/login_phone_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/postTransEdPrice" />
+
+            <com.hbb20.CountryCodePicker
+                android:id="@+id/translatorCountryCodePicker"
+                android:layout_width="@dimen/dp_88"
+                android:layout_height="@dimen/dp_40"
+                android:layout_marginTop="@dimen/dp_8"
+                android:background="@drawable/country_code_bg"
+                android:gravity="center"
+                app:ccp_contentColor="@color/color_grey_9b9b9b"
+                app:ccp_defaultNameCode="VN"
+                app:ccp_rememberLastSelection="true"
+                app:ccp_showArrow="false"
+                app:ccp_showNameCode="false"
+                app:ccp_textSize="@dimen/sp_14"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/addressPostLbl3" />
+
+            <EditText
+                android:id="@+id/postTransEdPhone"
+                style="@style/EditTextDialogStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_12"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:hint="@string/login_phone_title"
+                android:inputType="phone"
+                android:text="@={viewmodel.phone}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/translatorCountryCodePicker"
+                app:layout_constraintTop_toBottomOf="@+id/addressPostLbl3" />
+
+            <Button
+                android:id="@+id/postTransPickBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_16"
+                android:background="@drawable/ripple_button_white_bg"
+                android:paddingStart="@dimen/dp_18"
+                android:paddingEnd="@dimen/dp_18"
+                android:stateListAnimator="@null"
+                android:text="@string/select_image_lbl"
+                android:textAllCaps="false"
+                android:textColor="@color/color_indigo_26415d"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/postTransEdPhone" />
+
+            <TextView
+                android:id="@+id/textView3"
+                style="@style/LabelDialogStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:text="@string/image_lbl"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/postTransEdPhone" />
+
+            <TextView
+                android:id="@+id/textView4"
+                style="@style/LabelDialogStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/content_lbl"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/translatePostBarrier" />
+
+            <EditText
+                android:id="@+id/postTransEdContent"
+                style="@style/EditTextDialogStyle"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_100"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:gravity="top"
+                android:hint="@string/content_lbl"
+                android:inputType="textMultiLine|text"
+                android:lines="4"
+                android:scrollbars="vertical"
+                android:text="@={viewmodel.content}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+            <TextView
+                android:id="@+id/addressPostLbl4"
+                style="@style/LabelDialogStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/note_lbl"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/postTransEdContent" />
+
+            <EditText
+                android:id="@+id/postTransEdNote"
+                style="@style/EditTextDialogStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:hint="@string/note_lbl"
+                android:inputType="text"
+                android:text="@={viewmodel.note}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/addressPostLbl4" />
+
+            <CheckBox
+                android:id="@+id/postTransTopCb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center_vertical"
+                android:text="@string/up_top_lbl"
+                android:textColor="@color/color_indigo_26415d"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/postTransEdNote" />
+
+            <Button
+                android:id="@+id/postTransCommitBtn"
+                style="@style/PinkButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:layout_marginBottom="@dimen/dp_30"
+                android:text="@string/commit_lbl"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/postTransTopCb" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_1"
+                android:layout_marginTop="@dimen/dp_30"
+                app:layout_constraintTop_toBottomOf="@id/postTransCommitBtn" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/translatePostRecyclerImg"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_16"
+                android:layout_marginBottom="@dimen/dp_4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/postTransPickBtn"
+                tools:itemCount="4"
+                tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/layout_images_horizontal"
+                tools:orientation="horizontal" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/translatePostBarrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="translatePostRecyclerImg,postTransPickBtn" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

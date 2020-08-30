@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_bg_dialog_outside">
+
+        <RelativeLayout
+            style="@style/DialogStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginEnd="@dimen/dp_16">
+
+            <TextView
+                android:id="@+id/dialogTitle"
+                style="@style/TitleDialogStyle"
+                android:text="@string/dialog_title_news" />
+
+            <!--<EditText
+                android:id="@+id/inputKeyword"
+                style="@style/EditTextDialogStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/dialogTitle"
+                android:layout_marginTop="@dimen/dp_24"
+                android:hint="@string/hint_input_require" />-->
+
+            <TextView
+                android:id="@+id/servicePrice"
+                style="@style/LabelDialogStyle"
+                android:layout_below="@+id/dialogTitle"
+                android:text="@string/dialog_new_subject" />
+
+            <Spinner
+                android:id="@+id/newSelector"
+                style="@style/SpinnerDialogStyle"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_40"
+                android:layout_below="@+id/servicePrice"
+                android:layout_marginTop="@dimen/dp_8"
+                android:background="@drawable/drop_down_list_bg" />
+
+            <Button
+                android:id="@+id/seekBtn"
+                style="@style/PinkButtonStyle"
+                android:layout_below="@+id/newSelector"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/dp_30"
+                android:layout_marginBottom="@dimen/dp_30"
+                android:text="@string/search_button_lbl" />
+
+            <ImageView
+                android:id="@+id/closeBtn"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/dp_20"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_close" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+</layout>

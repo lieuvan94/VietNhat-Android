@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="vn.hexagon.vietnhat.ui.post.visa.VisaPostViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_gray_f4f5f7">
+
+        <RelativeLayout
+            android:id="@+id/visaPostParent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/visaTitle"
+                style="@style/LabelDialogStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_24"
+                android:text="@string/post_title_lbl" />
+
+            <EditText
+                android:id="@+id/visaPostEdTitle"
+                style="@style/EditTextDialogStyle"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/visaTitle"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:hint="@string/post_title_lbl"
+                android:text="@={viewmodel.title}" />
+
+            <TextView
+                android:id="@+id/servicePrice"
+                style="@style/LabelDialogStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/visaPostEdTitle"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_16"
+                android:text="@string/address_label" />
+
+            <EditText
+                android:id="@+id/visaPostEdAddress"
+                style="@style/EditTextDialogStyle"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/servicePrice"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:focusable="false"
+                android:hint="@string/address_label"
+                android:singleLine="true"
+                android:text="@={viewmodel.address}" />
+
+            <TextView
+                android:id="@+id/visaPriceLbl"
+                style="@style/LabelDialogStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/visaPostEdAddress"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_16"
+                android:text="@string/travel_price_lbl" />
+
+            <TextView
+                android:id="@+id/visaPriceUnitLbl"
+                style="@style/LabelDialogStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/visaPostEdAddress"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/dp_16"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:text="@string/money_unit" />
+
+            <EditText
+                android:id="@+id/visaPostEdPrice"
+                style="@style/EditTextDialogStyle"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/visaPriceLbl"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:hint="@string/travel_price_lbl"
+                android:inputType="number"
+                android:text="@={viewmodel.price}" />
+
+            <TextView
+                android:id="@+id/visaPhoneLbl"
+                style="@style/LabelDialogStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/visaPostEdPrice"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_16"
+                android:text="@string/login_phone_title" />
+
+            <com.hbb20.CountryCodePicker
+                android:id="@+id/visaCountryCodePicker"
+                android:layout_width="@dimen/dp_88"
+                android:layout_height="@dimen/dp_40"
+                android:layout_below="@+id/visaPhoneLbl"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_8"
+                android:background="@drawable/country_code_bg"
+                android:gravity="center"
+                app:ccp_contentColor="@color/color_grey_9b9b9b"
+                app:ccp_defaultNameCode="VN"
+                app:ccp_rememberLastSelection="true"
+                app:ccp_showArrow="false"
+                app:ccp_showNameCode="false"
+                app:ccp_textSize="@dimen/sp_14" />
+
+            <EditText
+                android:id="@+id/visaPostEdPhone"
+                style="@style/EditTextDialogStyle"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/visaPhoneLbl"
+                android:layout_marginStart="@dimen/dp_12"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:layout_toEndOf="@id/visaCountryCodePicker"
+                android:hint="@string/login_phone_title"
+                android:inputType="number"
+                android:text="@={viewmodel.phone}"
+                tools:ignore="TextFields" />
+
+            <TextView
+                android:id="@+id/imageLbl"
+                style="@style/LabelDialogStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/visaPostEdPhone"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_28"
+                android:text="@string/image_lbl" />
+
+            <LinearLayout
+                android:id="@+id/visaPostBarrier"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/visaPostSelectBtn"
+                android:orientation="vertical">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/visaPostRecyclerImg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:layout_marginTop="@dimen/dp_16"
+                    android:layout_marginEnd="@dimen/dp_16"
+                    android:layout_marginBottom="@dimen/dp_4"
+                    tools:itemCount="4"
+                    tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/layout_images_horizontal"
+                    tools:orientation="horizontal" />
+
+                <TextView
+                    style="@style/LabelDialogStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:text="@string/content_lbl" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/visaPostSelectBtn"
+                style="@style/WhiteButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/visaPostEdPhone"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/dp_16"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:text="@string/select_image_lbl" />
+
+            <EditText
+                android:id="@+id/visaPostEdContent"
+                style="@style/EditTextMultilineStyle"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/visaPostBarrier"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:hint="@string/content_lbl"
+                android:text="@={viewmodel.content}" />
+
+            <TextView
+                android:id="@+id/messengerLbl"
+                style="@style/LabelDialogStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/visaPostEdContent"
+                android:layout_marginStart="@dimen/dp_16"
+                android:text="@string/note_lbl" />
+
+            <EditText
+                android:id="@+id/visaPostEdMessenger"
+                style="@style/EditTextDialogStyle"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/messengerLbl"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:hint="@string/note_lbl"
+                android:text="@={viewmodel.note}" />
+
+            <CheckBox
+                android:id="@+id/visaPostPinCheck"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/visaPostEdMessenger"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_16"
+                android:text="@string/up_top_lbl"
+                android:textColor="@color/color_indigo_26415d" />
+
+            <Button
+                android:id="@+id/visaPostCommitBtn"
+                style="@style/PinkButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/visaPostPinCheck"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_30"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:layout_marginBottom="@dimen/dp_16"
+                android:text="@string/commit_lbl"
+                android:textColor="@color/colorWhite" />
+        </RelativeLayout>
+    </ScrollView>
+</layout>

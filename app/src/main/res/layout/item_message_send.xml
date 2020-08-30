@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="@dimen/margin_minimum"
+      android:layout_marginEnd="@dimen/margin_normal"
+      android:layout_marginStart="@dimen/margin_default"
+      android:layout_marginTop="@dimen/margin_minimum"
+      >
+    <TextView
+        android:id="@+id/itemMessageSendContentText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/item_message_send_background"
+        android:lineSpacingExtra="@dimen/dp_4"
+        android:maxWidth="@dimen/item_chat_max_width"
+        android:padding="@dimen/margin_normal"
+        android:text="@{data.content}"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintBottom_toTopOf="@id/itemMessageSendTimeText"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/itemMessageSendTimeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:text="@{data.timeConverted}"
+        android:textColor="@color/color_grey_9b9b9b"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/itemMessageSendContentText"
+        />
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+  <data>
+    <import type="vn.hexagon.vietnhat.data.model.remote.ChatContent" />
+    <variable
+        name="data"
+        type="ChatContent"
+        />
+  </data>
+</layout>

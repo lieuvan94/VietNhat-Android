@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="android.widget.ImageButton" />
+
+        <variable
+            name="viewmodel"
+            type="vn.hexagon.vietnhat.ui.list.PostListViewModel" />
+
+        <variable
+            name="position"
+            type="Integer" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:foreground="?attr/selectableItemBackground"
+        android:id="@+id/martListItemArea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhite">
+
+        <ImageView
+            android:id="@+id/previewImg"
+            android:layout_width="88dp"
+            android:layout_height="88dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:adjustViewBounds="true"
+            android:background="@drawable/round_corner_img_bg"
+            android:contentDescription="@null"
+            android:scaleType="fitXY"
+            app:imageUrl="@{viewmodel.postListResponse.data[position].img}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/backgrounds/scenic[15]" />
+
+        <TextView
+            android:id="@+id/subTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="16dp"
+            android:text="@{viewmodel.postListResponse.data[position].address}"
+            android:textColor="@color/color_grey_9b9b9b"
+            android:textSize="@dimen/sp_12"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/previewImg"
+            app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
+            tools:text="220 Cầu Giấy, Ba Đình, Hà Nội" />
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:gravity="center_vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/previewImg"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/topIcon"
+                android:layout_width="@dimen/dp_10"
+                android:layout_height="@dimen/dp_10"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="@dimen/dp_12"
+                android:layout_marginEnd="4dp"
+                android:background="@drawable/ic_top"
+                android:includeFontPadding="false"
+                android:visibility="@{viewmodel.displayTopIcon(viewmodel.postListResponse.data[position].isTop) ? View.VISIBLE : View.GONE}" />
+
+            <TextView
+                android:id="@+id/itemTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:textStyle="bold"
+                android:layout_toStartOf="@+id/iconFavourite"
+                android:layout_toEndOf="@+id/topIcon"
+                android:text="@{viewmodel.postListResponse.data[position].title}"
+                android:textColor="@color/color_indigo_26415d"
+                android:textSize="@dimen/sp_14"
+                tools:text="Siêu thị Lotte Mart" />
+
+            <ImageButton
+                android:id="@+id/iconFavourite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="8dp"
+                android:visibility="gone"
+                android:layout_marginTop="8dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@null"
+                android:padding="3dp"
+                android:src="@{viewmodel.postListResponse.data[position].isFavourite == 0 ? @drawable/ic_save : @drawable/ic_save_active}"
+                tools:src="@drawable/ic_save" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/itemLastText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="@{viewmodel.postListResponse.data[position].content}"
+            android:textColor="@color/color_indigo_26415d"
+            android:textSize="@dimen/sp_12"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/previewImg"
+            app:layout_constraintTop_toBottomOf="@+id/subTitle"
+            tools:text="Chuỗi siêu thị lớn bán nhiều loại mặt hàng, quần áo, đồ điện tử và các…  hàng hoá khác. Luôn có nhiều ưu đãi hấp dẫn dành cho khách hàng." />
+
+        <View
+            android:id="@+id/itemDivider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/color_divider"
+            android:scrollbarSize="1dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/martItemBarrier" />
+
+        <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/martItemBarrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="previewImg,itemLastText"
+                tools:layout_editor_absoluteY="121dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

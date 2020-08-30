@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="vn.hexagon.vietnhat.ui.setting.rate.RateViewModel" />
+
+        <variable
+            name="userId"
+            type="String" />
+
+        <variable
+            name="star"
+            type="String" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/dp_16"
+        android:layout_marginEnd="@dimen/dp_16"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp_24"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:gravity="center_horizontal"
+                    android:text="@string/rate_box_label"
+                    android:textColor="@color/color_indigo_26415d"
+                    android:textSize="@dimen/sp_14" />
+
+                <RatingBar
+                    android:id="@+id/ratingBar"
+                    style="@style/RatingBarStyleCustom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:isIndicator="false"
+                    android:stepSize="1"
+                    android:numStars="5"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/dp_20" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_16"
+            android:text="@string/setting_rate_supplement"
+            android:textColor="@color/color_indigo_26415d"
+            android:textSize="@dimen/sp_14" />
+
+        <EditText
+            style="@style/EditTextMultilineStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_8"
+            android:hint="@string/setting_supplement_hint"
+            android:text="@={viewmodel.content}" />
+
+        <Button
+            style="@style/PinkButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_24"
+            android:onClick="@{() -> viewmodel.requestRatingApp(userId, star)}"
+            android:text="@string/setting_rate_button" />
+    </LinearLayout>
+</layout>

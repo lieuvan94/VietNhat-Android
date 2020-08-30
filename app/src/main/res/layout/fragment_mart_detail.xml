@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="vn.hexagon.vietnhat.data.model.post.Post"/>
+        <import type="androidx.lifecycle.LiveData"/>
+        <variable
+            name="viewmodel"
+            type="vn.hexagon.vietnhat.ui.detail.PostDetailViewModel" />
+        <variable
+            name="post"
+            type="LiveData&lt;Post>" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:paddingBottom="@dimen/dp_24"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_24"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/color_indigo_26415d"
+                    android:textSize="@dimen/sp_16"
+                    android:textStyle="bold"
+                    tools:text="Phú Quốc - Hà Tiên - Rạch Giá - Châu Đốc" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_6"
+                android:textColor="@color/color_indigo_26415d"
+                android:textSize="@dimen/sp_13"
+                tools:text="5 ngày 4 đêm" />
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/detailViewPager"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_250"
+                android:layout_marginTop="@dimen/dp_26" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_16"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/roboto_bold"
+                    android:includeFontPadding="false"
+                    android:textColor="@color/color_pink_d14b79"
+                    android:textSize="@dimen/sp_14"
+                    tools:text="20.000.000 VNĐ/ngày"
+                    tools:ignore="RelativeOverlap" />
+
+                <ImageButton
+                    android:id="@+id/detailCallBtn"
+                    android:layout_width="@dimen/dp_40"
+                    android:layout_height="@dimen/dp_40"
+                    android:layout_alignParentEnd="true"
+                    android:background="@drawable/circle_menu_pink_bg"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_mess_active" />
+
+                <ImageButton
+                    android:layout_width="@dimen/dp_40"
+                    android:layout_height="@dimen/dp_40"
+                    android:layout_marginEnd="@dimen/dp_16"
+                    android:layout_toStartOf="@+id/detailCallBtn"
+                    android:background="@drawable/circle_menu_pink_bg"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_mess_active" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_1"
+                android:layout_marginTop="@dimen/dp_16"
+                android:background="@color/color_grey_9b9b9b" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_16"
+                android:fontFamily="@font/roboto_medium"
+                android:textColor="@color/color_indigo_26415d"
+                android:textSize="@dimen/sp_14"
+                tools:text="Lịch Trình" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_16"
+                android:fontFamily="@font/roboto_regular"
+                android:textColor="@color/color_indigo_26415d"
+                android:textSize="@dimen/sp_14" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

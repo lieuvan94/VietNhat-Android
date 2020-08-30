@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_bg_dialog_outside">
+
+        <RelativeLayout
+            style="@style/DialogStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginEnd="@dimen/dp_20">
+
+            <TextView
+                android:id="@+id/dialogTitle"
+                style="@style/TitleDialogStyle"
+                android:text="@string/photo_select_title" />
+
+            <ImageButton
+                android:id="@+id/dialogPhotoCameraBtn"
+                android:layout_alignParentStart="true"
+                android:layout_toStartOf="@+id/dialog_photo_symbol"
+                android:contentDescription="@null"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_40"
+                style="@style/PinkButtonStyle"
+                android:layout_below="@+id/dialogTitle"
+                android:layout_marginTop="@dimen/dp_30"
+                android:src="@drawable/ic_camera"/>
+            <View
+                android:id="@+id/dialog_photo_symbol"
+                android:layout_width="@dimen/dp_16"
+                android:layout_height="@dimen/dp_1"
+                android:layout_below="@+id/dialogTitle"
+                android:layout_marginTop="@dimen/dp_30"
+                android:layout_centerHorizontal="true"/>
+            <ImageButton
+                android:id="@+id/dialogPhotoGalleryBtn"
+                android:layout_alignParentEnd="true"
+                android:contentDescription="@null"
+                android:layout_width="wrap_content"
+                android:layout_toEndOf="@+id/dialog_photo_symbol"
+                android:layout_height="@dimen/dp_40"
+                style="@style/PinkButtonStyle"
+                android:layout_below="@+id/dialogTitle"
+                android:layout_marginTop="@dimen/dp_30"
+                android:src="@drawable/ic_gallery"/>
+            <Button
+                android:id="@+id/dialogPhotoCancelBtn"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_40"
+                android:layout_below="@+id/dialogPhotoGalleryBtn"
+                android:text="@string/photo_dialog_cancel"
+                android:textAllCaps="true"
+                android:layout_marginTop="@dimen/dp_16"
+                android:layout_marginBottom="@dimen/dp_30"
+                style="@style/WhiteButtonStyle"/>
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+</layout>

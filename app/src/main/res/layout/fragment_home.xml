@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+  <data>
+    <variable
+        name="viewmodel"
+        type="vn.hexagon.vietnhat.ui.home.HomeViewModel" />
+  </data>
+
+  <ScrollView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+      <RelativeLayout
+          android:id="@+id/homeInfinityPagerArea"
+          android:layout_width="match_parent"
+          android:layout_height="@dimen/dp_180"
+          app:layout_constraintTop_toTopOf="parent"
+          >
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/homeInfinityPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+
+        <LinearLayout
+            android:id="@+id/homeInfinityIndicator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/dp_5"
+            android:gravity="center"
+            android:orientation="horizontal"
+            />
+      </RelativeLayout>
+
+      <TextView
+          android:id="@+id/homeSubTitleLbl"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_centerHorizontal="true"
+          android:layout_below="@+id/homeInfinityPagerArea"
+          android:layout_marginTop="@dimen/dp_20"
+          android:text="@string/home_sub_title_lbl"
+          android:textColor="@color/color_indigo_26415d"
+          android:textSize="@dimen/sp_20"
+          android:textStyle="bold"
+          />
+
+      <androidx.recyclerview.widget.RecyclerView
+          android:id="@+id/homeGridMenu"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_below="@+id/homeSubTitleLbl"
+          android:layout_marginBottom="60dp"
+          android:layout_marginTop="8dp"
+          android:clipToPadding="false"
+          android:nestedScrollingEnabled="false"
+          android:paddingBottom="8dp"
+          android:paddingLeft="6dp"
+          android:paddingRight="6dp"
+          android:scrollbars="none"
+          />
+    </RelativeLayout>
+  </ScrollView>
+</layout>

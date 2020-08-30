@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingEnd="@dimen/action_bar_simple_text_content_padding_horizontal"
+    android:paddingStart="@dimen/action_bar_simple_text_content_padding_horizontal"
+    >
+
+  <TextView
+      android:id="@+id/titleSingleText"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_alignParentBottom="true"
+      android:layout_marginBottom="@dimen/dp_12"
+      android:gravity="center"
+      android:textColor="@color/action_bar_simple_text_title_color"
+      android:textSize="@dimen/action_bar_simple_text_title_single_size"
+      style="@style/BoldText"
+      />
+</RelativeLayout>
